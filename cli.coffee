@@ -1,13 +1,10 @@
-fs = require('fs')
-{jsdom} = require("jsdom")
-{parser, compile} = HAMLjr = require('haml-jr')
-
-file = process.argv[2]
+stdin = require "stdin"
+{jsdom} = require "jsdom"
+{parser, compile} = HAMLjr = require 'haml-jr'
 
 document = jsdom()
 
-runFile = (name) ->
-  data = fs.readFileSync name, "UTF-8"
+stdin (data) ->
   ast = parser.parse(data)
 
   program = compile ast,
@@ -24,5 +21,3 @@ runFile = (name) ->
   .join("\n")
 
   process.stdout.write output
-
-runFile(file)

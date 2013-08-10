@@ -1,0 +1,8 @@
+#!/bin/bash
+set -e
+
+BIN="bin/haml-jr"
+
+echo "#!/usr/bin/env node" > $BIN
+node_modules/.bin/coffee -sc < cli.coffee >> $BIN
+chmod +x $BIN
