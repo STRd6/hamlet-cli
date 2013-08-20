@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+mkdir -p bin
+
 BIN="bin/haml-jr"
 
 echo "#!/usr/bin/env node" > $BIN
