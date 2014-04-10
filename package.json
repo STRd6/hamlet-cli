@@ -1,13 +1,12 @@
 {
   "name": "haml-jr-cli",
-  "version": "0.2.0",
+  "version": "0.5.5",
   "devDependencies": {
     "coffee-script": "~1.6.3",
     "mocha": "~1.12.0"
   },
   "dependencies": {
-    "haml-jr": "~0.2.3",
-    "jsdom": "~0.7.0",
+    "haml-jr": "~0.5.5",
     "stdin": "0.0.1",
     "commander": "~2.0.0"
   },
