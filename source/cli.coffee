@@ -1,5 +1,5 @@
 stdin = require "stdin"
-{parser, compile} = HAMLjr = require 'haml-jr'
+{parser, compile} = require 'hamlet-compiler'
 
 cli = require("commander")
   .version(require('../package.json').version)

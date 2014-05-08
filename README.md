@@ -1,17 +1,12 @@
-HAMLjr CLI
+Hamlet CLI
 ==========
 
-Command line interface for processing files with HAMLjr over stdio.
+Command line interface for processing files with Hamlet over stdio.
+
+Haml in, JavaScript templates out.
 
 Usage:
 
-    haml-jr -s < template.haml > output.html
+    hamlet < template.haml > output.js
 
-    echo "%yolo" | haml-jr
-
-The HAMLjr CLI doesn't provide any of the benefits of using HAMLjr (yet).
-
-TODO
-====
-
-Render js templates.
+    echo "%h1#title= @title" | hamlet

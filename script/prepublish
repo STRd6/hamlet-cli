@@ -3,7 +3,7 @@ set -e
 
 mkdir -p bin
 
-BIN="bin/haml-jr"
+BIN="bin/hamlet"
 
 echo "#!/usr/bin/env node" > $BIN
 node_modules/.bin/coffee -sc < source/cli.coffee >> $BIN
