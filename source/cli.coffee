@@ -4,6 +4,7 @@ stdin = require "stdin"
 cli = require("commander")
   .version(require('../package.json').version)
   .option("-a, --ast", "Output AST")
+  .option("-r, --runtime [provider]", "Runtime provider")
   .parse(process.argv)
 
 stdin (input) ->
@@ -15,6 +16,6 @@ stdin (input) ->
     return
 
   program = compile ast,
-    name: cli.name
+    runtime: cli.runtime
 
   process.stdout.write program
