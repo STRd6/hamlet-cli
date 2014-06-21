@@ -5,6 +5,7 @@ cli = require("commander")
   .version(require('../package.json').version)
   .option("-a, --ast", "Output AST")
   .option("-r, --runtime [provider]", "Runtime provider")
+  .option("-e, --exports [name]", "Export compiled template as (default 'module.exports'")
   .parse(process.argv)
 
 stdin (input) ->
@@ -17,5 +18,6 @@ stdin (input) ->
 
   program = compile ast,
     runtime: cli.runtime
+    exports: cli.exports
 
   process.stdout.write program
