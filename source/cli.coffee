@@ -2,6 +2,7 @@ fs = require "fs"
 stdin = require "stdin"
 {parser, compile} = require 'hamlet-compiler'
 wrench = require "wrench"
+CoffeeScript = require "coffee-script"
 
 cli = require("commander")
   .version(require('../package.json').version)
@@ -40,6 +41,7 @@ if (dir = cli.dir)
         program = compile parser.parse(input),
           runtime: cli.runtime
           exports: exports
+          compiler: CoffeeScript
 
         fs.writeFileSync(outPath, program)
 
@@ -55,3 +57,4 @@ else
       process.stdout.write compile parser.parse(input),
         runtime: cli.runtime
         exports: cli.exports
+        compiler: CoffeeScript
